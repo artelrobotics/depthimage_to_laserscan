@@ -129,7 +129,7 @@ sensor_msgs::LaserScanPtr DepthImageToLaserScan::convert_msg(const sensor_msgs::
 
   // Calculate and fill the ranges
   const uint32_t ranges_size = depth_msg->width;
-  scan_msg->ranges.assign(ranges_size, std::numeric_limits<float>::quiet_NaN());
+  scan_msg->ranges.assign(ranges_size, std::numeric_limits<float>::infinity());
 
   if (depth_msg->encoding == sensor_msgs::image_encodings::TYPE_16UC1)
   {
